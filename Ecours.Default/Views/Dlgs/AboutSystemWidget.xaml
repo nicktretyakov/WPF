@@ -1,0 +1,64 @@
+﻿<Window x:Class="Ecours.Default.Views.AboutSystemWidget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ecours.Default.Views"
+        mc:Ignorable="d"
+        ShowInTaskbar="False" 
+        ResizeMode="NoResize" 
+        WindowStyle="None" 
+        Topmost="True"        
+        Title="Message Box"        
+        WindowStartupLocation="CenterOwner" Height="520" Width="680">
+    <Border  BorderBrush="#D7D7D7" 
+        BorderThickness="4" CornerRadius="10">
+        <Grid>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+
+                </Grid.RowDefinitions>
+                
+
+
+                <TextBlock x:Name="WidgetCaption" Grid.Row="0" Style="{StaticResource CaptionStyle}" >
+                </TextBlock>
+
+                <Button Margin="5,0,5,0" Grid.Row="0" Height="24" Width="24" HorizontalAlignment="Right" Command ="{Binding CloseWidget}">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Image Name="iClose"  Source = "/Images/enabled/u96_close_widget.png" Width="24" Height="24"/>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="iClose" Property="Source" Value="/Images/mouseover/u1299_close_widget.png" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+                <Image Source="/Images/u4097.png" Width="24" Height="24" HorizontalAlignment="Left"></Image>
+
+                <Grid Grid.Row="2">
+
+                    <Button x:Name="btCancel" Width="100" Height="30" HorizontalAlignment="Right"
+                            Click="Button_Click" Style="{DynamicResource MainBtnStyle}"  Content="Отмена">
+                    </Button>
+
+
+
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+

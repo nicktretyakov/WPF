@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26B6DF34-B672-40F2-AD92-215662F0C987}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecours.Default</RootNamespace>
+    <AssemblyName>Ecours.Default</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Ecours.Utils">
+      <HintPath>..\..\Ecours.Share\Ecours.Utils\bin\Debug\Ecours.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Ecours.Share\Ecours.Utils\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.7.1.0.431\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.7.1.0.431\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Views\ImageButton.cs" />
+    <Compile Include="Model\AskService.cs" />
+    <Compile Include="Model\CheckSelfService.cs" />
+    <Compile Include="Model\FastLinksService.cs" />
+    <Compile Include="Model\IAskService.cs" />
+    <Compile Include="Model\ICheckSelfService.cs" />
+    <Compile Include="Model\IFastLinksService.cs" />
+    <Compile Include="Model\IWidgetService.cs" />
+    <Compile Include="Model\WidgetService.cs" />
+    <Compile Include="ModuleDefault.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewsModel\AskVM.cs" />
+    <Compile Include="ViewsModel\CalendarVM.cs" />
+    <Compile Include="ViewsModel\CheckSelfVM.cs" />
+    <Compile Include="ViewsModel\DlgCreator.cs" />
+    <Compile Include="ViewsModel\FastLinksVM.cs" />
+    <Compile Include="ViewsModel\MainVM.cs" />
+    <Compile Include="ViewsModel\ToolVM.cs" />
+    <Compile Include="Views\DefaultView.xaml.cs">
+      <DependentUpon>DefaultView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dlgs\AboutSystemWidget.xaml.cs" />
+    <Compile Include="Views\Dlgs\ProductWidget.xaml.cs" />
+    <Compile Include="Views\Dlgs\ToolFastLinkWidget.xaml.cs" />
+    <Compile Include="Views\Dlgs\ToolWidget.xaml.cs" />
+    <Compile Include="Views\Widgets\AskWidget.xaml.cs" />
+    <Compile Include="Views\Widgets\CalendarWidget.xaml.cs" />
+    <Compile Include="Views\Widgets\CheckSelfWidget.xaml.cs" />
+    <Compile Include="Views\Widgets\FastLinkWidget.xaml.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Styles\BtnStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\ChStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DefaultStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DefaultViewStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DlgStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\HLStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LabelStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\RbStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\TextBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\TreeStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DefaultView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Dlgs\AboutSystemWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dlgs\ProductWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dlgs\ToolFastLinkWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Dlgs\ToolWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Widgets\AskWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Widgets\CalendarWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Widgets\CheckSelfWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Widgets\FastLinkWidget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\disabled\close_not_active.png" />
+    <Resource Include="Resources\Images\disabled\edit_not_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\down\close_mousedown.png" />
+    <Resource Include="Resources\Images\down\edit_mousedown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\enabled\close_active.png" />
+    <Resource Include="Resources\Images\enabled\edit_active.png" />
+    <Resource Include="Resources\Images\enabled\u3847.png" />
+    <Resource Include="Resources\Images\enabled\u3851.png" />
+    <Resource Include="Resources\Images\enabled\u4893.png" />
+    <Resource Include="Resources\Images\enabled\u4897.png" />
+    <Resource Include="Resources\Images\enabled\u5424.png" />
+    <Resource Include="Resources\Images\enabled\u96_close_widget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\mouseover\back_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\close_mouseover,selected.png" />
+    <Resource Include="Resources\Images\mouseover\close_tab_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\edit_active.png" />
+    <Resource Include="Resources\Images\mouseover\plus_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\start_page.png" />
+    <Resource Include="Resources\Images\mouseover\u1299_close_widget.png" />
+    <Resource Include="Resources\Images\mouseover\u18_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\u20_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\u3848.png" />
+    <Resource Include="Resources\Images\mouseover\u3852.png" />
+    <Resource Include="Resources\Images\mouseover\u444_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\u448_mouseover.png" />
+    <Resource Include="Resources\Images\mouseover\u4894.png" />
+    <Resource Include="Resources\Images\mouseover\u4898.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\filter.png" />
+    <Resource Include="Resources\Images\u3631.png" />
+    <Resource Include="Resources\Images\u3650.png" />
+    <Resource Include="Resources\Images\u3653.png" />
+    <Resource Include="Resources\Images\u3656.png" />
+    <Resource Include="Resources\Images\u4068.png" />
+    <Resource Include="Resources\Images\u4097.png" />
+    <Resource Include="Resources\Images\u4464.png" />
+    <Resource Include="Resources\Images\u4467.png" />
+    <Resource Include="Resources\Images\u4470.png" />
+    <Resource Include="Resources\Images\u4489.png" />
+    <Resource Include="Resources\Images\u4547.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetDir)\Ecours.Default.dll $(SolutionDir)Ecours.Desktop\bin\$(Configuration)\DefModules\Ecours.Default.dll</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

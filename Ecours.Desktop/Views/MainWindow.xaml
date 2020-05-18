@@ -1,0 +1,217 @@
+﻿<RibbonWindow x:Class="Ecours.Desktop.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        Title="Shell" WindowState="Maximized">
+    
+    <Grid x:Name="LayoutRoot" Margin="0,15,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!-- Tab Region -->
+        <Grid x:Name="MenuArea" Grid.Row="0" Background="#EAEAEF">
+            <ContentControl>
+                <TabControl Background="{StaticResource MainTabItemBackground}" ItemContainerStyle="{StaticResource MainTabItemStyle}">
+                   
+                    <TabItem>
+                        <TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Button Style="{StaticResource MainTabBtnStyle}">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Image  Name="iU448" Source="./Images/enabled/u448.png" Height="24" Width="24"></Image>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="iU448" Property="Source" Value="./Images/mouseover/u448_mouseover.png" />
+                                                    </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                             </ControlTemplate>
+                                         </Button.Template>
+                                    </Button>
+                                    <Button Style="{StaticResource MainTabBtnStyle}">
+                                        <Image Source="./Images/enabled/u20.png" Height="24" Width="24"></Image>
+                                    </Button>
+                                    <Button Style="{StaticResource MainTabBtnStyle}">
+                                        <Image Source="./Images/enabled/u18.png" Height="24" Width="24"></Image>
+                                    </Button>
+                                    <Button Style="{StaticResource MainTabBtnStyle}">
+                                        <Image Source="./Images/enabled/u444.png" Height="24" Width="24"></Image>
+                                    </Button>
+                                </DockPanel>
+                            </DataTemplate>
+
+                        </TabItem.HeaderTemplate>
+                    </TabItem>
+                    <TabItem Selector.IsSelected="True">
+                        <TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <TextBlock                                       
+                                       Text="Важная информация">
+                                    </TextBlock>
+                                    <Button Margin="5,0,5,0" Background="{StaticResource MainTabItemBackground}">
+                                        <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Image Name="iCloseTab"  Source = "./Images/enabled/close_active_tab_dark.png" Width="16" Height="16"/>
+                                            <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="iCloseTab" Property="Source" Value="./Images/mouseover/close_tab_mouseover.png" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+                                </DockPanel>
+                            </DataTemplate>
+                            </TabItem.HeaderTemplate>
+                                <TabControl Background="{StaticResource InnerTabItemBackground}" ItemContainerStyle="{StaticResource InnerTabItemStyle}">
+                            <TabItem>
+                                <TabItem.HeaderTemplate>
+                                    <DataTemplate>
+                                        <DockPanel>
+                                            <Button Margin="10, 0, 0 ,0" BorderThickness="0,0,0,0" Background="{StaticResource InnerTabItemBackground}">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Image  Name="iStartPage" Source="./Images/enabled/start_page.png" Height="25" Width="25"></Image>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="iStartPage" Property="Source" Value="./Images/mouseover/start_page.png" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                            <Button Margin="10, 0, 0 ,0" BorderThickness="0,0,0,0" Background="{StaticResource InnerTabItemBackground}">
+                                                <Button.Template>
+                                                    <ControlTemplate TargetType="Button">
+                                                        <Image Name="iBack" Source="./Images/enabled/back_active.png" Height="25" Width="25"></Image>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter TargetName="iBack" Property="Source" Value="./Images/mouseover/back_mouseover.png" />
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Button.Template>
+                                            </Button>
+                                        </DockPanel>
+                                    </DataTemplate>
+
+                                </TabItem.HeaderTemplate>
+                            </TabItem>
+
+                            <TabItem Header="Общий блок" IsSelected="True">
+                                <WrapPanel>
+                                    <Button Width="150" Content="Важная информация" Style="{DynamicResource TabButtonStyle}"  Command="{Binding ApplicationCommands.LoadAccountModule}">
+
+                                    </Button>
+
+                                    <Button Width="150" Content="УЗ" Style="{StaticResource TabButtonStyle}"  Command="{Binding ApplicationCommands.LoadAccountModule}">
+
+                                    </Button>
+
+                                  
+
+                                </WrapPanel>
+                                
+
+                            </TabItem>
+                            <TabItem Header="Управление данными">
+
+                                <Button Content="Контрагенты" Command="{Binding ApplicationCommands.LoadCommand}"></Button>
+                            </TabItem>
+                            <TabItem Header="ISO 14001">
+
+                            </TabItem>
+                        </TabControl>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.Header >
+                            
+
+                                <TextBlock FontFamily="Roboto"
+                                       FontSize="13"
+                                       
+                                       Text="Избранное">
+                                    
+                            </TextBlock>
+                                
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem >
+                        <TabItem.Header>
+                            <TextBlock FontFamily="Roboto"
+                                       FontSize="13"
+                                       
+                                     Text="Последние открытые документы">
+                            </TextBlock>
+                        </TabItem.Header>
+                    </TabItem>
+                    <TabItem>
+                        <TabItem.HeaderTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <Button Margin="0, 0, 0 ,0" BorderThickness="0,0,0,0" Background="#EAEAEF">
+                                        <Button.Template>
+                                            <ControlTemplate TargetType="Button">
+                                                <Image  Name="image" Source="./Images/enabled/plus_active.png" Height="25" Width="25"></Image>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="image" Property="Source" Value="./Images/mouseover/plus_mouseover.png" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Button.Template>
+                                    </Button>
+
+                                </DockPanel>
+                            </DataTemplate>
+
+                        </TabItem.HeaderTemplate>
+                    </TabItem>
+                </TabControl>
+
+                <!--
+                <TabControl x:Name="MainTab" >
+                    <TabControl.Resources>
+
+                    </TabControl.Resources>
+                    <TabControl.ItemTemplate>
+                        <DataTemplate DataType="{x:Type inf:ITab}">
+                            <TextBlock>
+                        <Run Text = "{Binding Name}"/>
+                        <Hyperlink Command="{Binding CloseTabCommand}"></Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                </TabControl>
+                -->
+            </ContentControl>
+        </Grid>
+        <!-- Ribbon Region 
+        <Ribbon x:Name="Ribbon" prism:RegionManager.RegionName="RibbonRegion">
+            <Ribbon.ApplicationMenu>
+                <RibbonApplicationMenu SmallImageSource="Images/SmallIcon.png">
+                    <RibbonApplicationMenuItem Header="Exit"
+													  x:Name="MenuItemExit"
+													  ImageSource="Images/Exit.png"
+													  Command="{Binding ApplicationCommands.ExitCommand}"/>
+
+                    <RibbonApplicationMenuItem Header="Load"
+													  x:Name="MenuItemLoad"
+													  ImageSource="Images/LargeIcon.png"													 
+                                                      Click="Button_Click"/>
+
+                </RibbonApplicationMenu>
+            </Ribbon.ApplicationMenu>
+        </Ribbon>
+        -->
+        <Grid x:Name="ClientArea" Grid.Row="1" Background="#EAEAEF">
+
+            <!-- Workspace Region-->
+
+            <ContentControl x:Name="WorkspaceRegion" prism:RegionManager.RegionName="WorkspaceRegion" />
+        </Grid>
+    </Grid>
+</RibbonWindow>

@@ -1,0 +1,112 @@
+﻿<Window x:Class="Ecours.Default.Views.ToolFastLinkWidget"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ecours.Default.Views"
+               ShowInTaskbar="False" 
+        ResizeMode="NoResize" 
+        WindowStyle="None" 
+        Topmost="True"        
+        Title="Message Box"        
+        WindowStartupLocation="CenterOwner" Height="520" Width="680">
+    <Border  BorderBrush="#D7D7D7" 
+        BorderThickness="4" CornerRadius="10">
+        <Grid>
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="40"/>
+
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <TextBlock x:Name="WidgetCaption"  Style="{StaticResource CaptionStyle}" />
+
+                    <Button Margin="5,0,5,0" Height="24" Width="24" HorizontalAlignment="Right" Command ="{Binding CloseWidget}">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Image Name="iClose"  Source = "/Images/enabled/u96_close_widget.png" Width="24" Height="24"/>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="iClose" Property="Source" Value="/Images/mouseover/u1299_close_widget.png" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                    <Image Source="/Images/u4097.png" Width="24" Height="24" HorizontalAlignment="Left"/>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <ListBox x:Name="ecoursModules" ItemsSource="{Binding EcoursModules}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                    <Grid Grid.Column="1">
+
+                        <Button Margin="0,-30,0,0" Style="{StaticResource BtnRigthStyle}" Height="24" Width="24"  Click="CreateFastLink"/>
+                        <Button Margin="0,30,0,0" Style="{StaticResource BtnLeftStyle}" Height="24" Width="24"  Click="RemoveFastLink"/>
+
+                    </Grid>
+                    <Grid Grid.Column="2">
+
+                        <ListBox x:Name="ecoursSelectedModules" ItemsSource="{Binding SelectedEcoursModules}" >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+
+                </Grid>
+
+                <Grid Grid.Row="2">
+
+                    <Grid.ColumnDefinitions>
+
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="140"/>
+
+
+                    </Grid.ColumnDefinitions>
+
+                    <Button x:Name="btCancel" Grid.Column="0" Width="100" Height="30" HorizontalAlignment="Right"
+                            Click="Button_Click" Style="{DynamicResource BtnStyle}"  Content="Отмена">
+                    </Button>
+
+                    <Button x:Name="btOk" Grid.Column="1" Width="100" Height="30" HorizontalAlignment="Center"
+                            CommandParameter="LegalAid" Style="{DynamicResource MainBtnStyle}"  Content="Oк" Click="BtOk_Click">
+                    </Button>
+
+
+
+
+
+                </Grid>
+
+
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+
+

@@ -1,0 +1,35 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="InnerTabItemBackground" Color="#F9F9F9"/>
+    <Style x:Key="InnerTabItemStyle" TargetType="{x:Type TabItem}">
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="Foreground" Value="#EAEAEF"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Border Name="Border" CornerRadius="4,4,0,0">
+                        <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#EAEAEF" />
+                            <Setter TargetName="Border" Property="BorderBrush" Value="#EAEAEF" />
+                            <Setter Property="Foreground" Value="#282828"/>
+
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="False">
+                            <Setter TargetName="Border" Property="Background" Value="#585B64" />
+                            <Setter Property="Foreground" Value="#EAEAEF"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

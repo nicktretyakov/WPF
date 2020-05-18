@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99C9E82C-C594-446D-AA59-8FFBC43AD226}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ecours.Desktop</RootNamespace>
+    <AssemblyName>Ecours.Desktop</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Ecours.Utils">
+      <HintPath>..\..\Ecours.Share\Ecours.Utils\bin\Debug\Ecours.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Ecours.Share\Ecours.Utils\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Unity.Wpf, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Unity.7.1.0.431\lib\net45\Prism.Unity.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Prism.Wpf, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prism.Wpf.7.1.0.431\lib\net45\Prism.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.0.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Abstractions.3.3.1\lib\net45\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.11.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Container.5.8.11\lib\net45\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Views\WidgetControl.xaml.cs">
+      <DependentUpon>WidgetControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\BtnStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\ChStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DefaultStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DlgStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\HLStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\InnerTabItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\LabelStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\MainTabBtn.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\MainTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\RbStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\TextBoxStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\TreeStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EcoursMessageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ApplicationCommands.cs" />
+    <Compile Include="ViewModel\AppVM.cs" />
+    <Compile Include="ViewModel\MainWindowVM.cs" />
+    <Compile Include="ViewModel\TabVM.cs" />
+    <Compile Include="Views\EcoursMessageWindow.xaml.cs">
+      <DependentUpon>EcoursMessageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Views\WidgetControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mouseover\u18_mouseover.png" />
+    <Resource Include="Views\Images\mouseover\u20_mouseover.png" />
+    <Resource Include="Views\Images\mouseover\u444_mouseover.png" />
+    <Resource Include="Views\Images\mouseover\u448_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\enabled\u18.png" />
+    <Resource Include="Views\Images\enabled\u20.png" />
+    <Resource Include="Views\Images\enabled\u444.png" />
+    <Resource Include="Views\Images\enabled\u448.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\enabled\plus_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mouseover\plus_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mouseover\back_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\enabled\back_active.png" />
+    <Resource Include="Views\Images\enabled\start_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mouseover\start_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\enabled\close_active_tab_dark.png" />
+    <Resource Include="Views\Images\enabled\close_active_tab_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mouseover\close_tab_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\Images\mousedown\close_tab_mousedown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\disabled\close_not_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\disabled\edit_not_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\down\close_mousedown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\down\edit_mousedown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\close_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\edit_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u3847.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u3851.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u4893.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u4897.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u5424.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\enabled\u96_close_widget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\back_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\close_mouseover,selected.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\close_tab_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\edit_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\plus_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\start_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u1299_close_widget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u18_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u20_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u3848.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u3852.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u444_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u448_mouseover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u4894.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mouseover\u4898.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u3631.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u3650.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u3653.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u3656.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4068.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4097.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4470.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4489.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\u4547.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

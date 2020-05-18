@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Ecours.Domain.Entity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Ecours.Domain.Entity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Contractor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EmployeeID" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Contractor" nillable="true" type="tns:Contractor" />
+  <xs:complexType name="ArrayOfContractor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Contractor" nillable="true" type="tns:Contractor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfContractor" nillable="true" type="tns:ArrayOfContractor" />
+</xs:schema>
